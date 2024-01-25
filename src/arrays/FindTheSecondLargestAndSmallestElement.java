@@ -21,17 +21,27 @@ public class FindTheSecondLargestAndSmallestElement {
         int secondSmallest = Integer.MAX_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
+            // if the current element is greater than the largest element, then update the
+            // largest and second largest elements
             if (arr[i] > largest) {
                 secondLargest = largest;
                 largest = arr[i];
-            } else if (arr[i] > secondLargest) {
+            }
+            // if the current element is greater than the second largest element, then
+            // update the second largest element
+            else if (arr[i] > secondLargest) {
                 secondLargest = arr[i];
             }
 
+            // if the current element is smaller than the smallest element, then update the
+            // smallest and second smallest elements
             if (arr[i] < smallest) {
                 secondSmallest = smallest;
                 smallest = arr[i];
-            } else if (arr[i] < secondSmallest) {
+            }
+            // if the current element is smaller than the second smallest element, then
+            // update the second smallest element
+            else if (arr[i] < secondSmallest) {
                 secondSmallest = arr[i];
             }
         }
